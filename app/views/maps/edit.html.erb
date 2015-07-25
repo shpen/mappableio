@@ -1,0 +1,8 @@
+<div class="col-sm-6 col-sm-push-3">
+  <h1>Editing Map</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to "Cancel", request.referrer || root_url, class: "btn btn-info btn-block" %>
+  <%= link_to "Delete", map_path(@map), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-block" %>
+</div>

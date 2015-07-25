@@ -1,0 +1,7 @@
+<div id="user-message" class="well"><%= AutoHtml::auto_html(@user.message) { simple_format; link(:target => 'blank') } %></div>
+<%= form_tag '/message', remote: true, id: "edit-message-form", class: "collapse" do %>
+  <div class="form-group">
+    <%= text_area_tag "message", @user.message, class: "form-control" %>
+  </div>
+  <%= submit_tag "Save", id: "submit-message-button", class: "btn btn-primary", data: { click_text: "Saving..." } %>
+<% end %>

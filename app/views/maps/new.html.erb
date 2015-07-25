@@ -1,0 +1,9 @@
+<div class="col-sm-6 col-sm-push-3">
+  <h1>New Map</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to request.referrer || root_url do %>
+    <button class ="btn btn-info btn-block">Cancel</button>
+  <% end %>
+</div>

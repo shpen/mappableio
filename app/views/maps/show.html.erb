@@ -1,0 +1,19 @@
+<h1><%= @map.title %></h1>
+<p><%= @map.description %></p>
+
+<% if @map.user == current_user %>
+  <%= link_to "Edit", edit_map_path(@map), class: "btn btn-info" %>
+<% end %>
+<% if @map.members.include?(current_user) %>
+  <%= link_to "Leave", leave_map_path(@map), class: "btn btn-danger" %>
+<% else %>
+  <%= link_to "Join", join_map_path(@map), class: "btn btn-success", id: "join-map-button" %>
+<% end %>
+
+<div style='width: 100%;'>
+  <div id="map" style='width: 100%; height: 600px;'></div>
+</div>
+
+<script type="text/javascript">
+  setupMap(<%= raw @markers.to_json %>);
+</script>

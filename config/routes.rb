@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  root 'home#index'
+
+  devise_for :users
+  get 'profile' => 'users#profile', as: :profile
+  post 'location' => 'users#update_location'
+  post 'message' => 'users#edit_message'
+
+  resources :maps do
+    member do 
+      get 'join'
+      get 'leave'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
