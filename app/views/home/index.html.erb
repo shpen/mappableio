@@ -1,13 +1,11 @@
-<%= link_to "New Map", new_map_path, class: "btn btn-primary" %>
+<div class="row col-sm-6 col-sm-offset-3" style="text-align: center;">
+  <%= link_to "New Map", new_map_path, class: "btn btn-primary btn-block" %>
 
-<br />
+  <h3>Maps</h3>
 
-<h3>Maps:</h3>
-
-<ul>
-  <% @maps.each do |map| %>
-    <li>
-      <%= link_to map.title, map %>
-    </li>
-  <% end %>
-</ul>
+  <div class="list-group">
+    <% @maps.each do |map| %>
+      <%= link_to map.title, map, class: "list-group-item" %>
+    <% end %>
+  </div>
+</div>
