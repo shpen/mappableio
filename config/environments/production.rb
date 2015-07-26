@@ -78,8 +78,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Devise
-  config.action_mailer.default_url_options = { :host => 'mappable.io' }
-  Rails.application.routes.default_url_options[:host] = 'mappable.io'
+  config.action_mailer.default_url_options = { :host => 'www.mappable.io' }
+  Rails.application.routes.default_url_options[:host] = 'www.mappable.io'
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
