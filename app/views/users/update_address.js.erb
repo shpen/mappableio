@@ -1,0 +1,7 @@
+hideAddressForm();
+<% if @coords.nil? %>
+	alert("Error: invalid address.");
+<% else %>
+	displayOnMap({"latitude": <%= @user.latitude %>, "longitude": <%= @user.longitude %>});
+	handler.removeMarkers(markers);
+<% end %>

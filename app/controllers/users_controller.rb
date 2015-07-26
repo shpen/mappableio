@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     render nothing: true
   end
 
+  def update_address
+    @user = current_user
+    @coords = Geocoder.coordinates(params[:address])
+    if !@coords.nil?
+      @user.update_attributes(latitude: @coords[0], longitude: @coords[1])
+    end
+  end
+
   def edit_message
     @user = current_user
     @user.update_attributes(message: params[:message])

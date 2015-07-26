@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'profile' => 'users#profile', as: :profile
   post 'location' => 'users#update_location'
   post 'message' => 'users#edit_message'
+  post 'address' => 'users#update_address'
 
   resources :maps do
     member do 

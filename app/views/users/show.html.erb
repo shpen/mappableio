@@ -12,8 +12,21 @@
   <div>
     <div id="map" style='height: 300px;'></div>
 
-    <button id="update-location-button" class="btn btn-info btn-block">Update location</button>
+    <button id="update-location-button" class="btn btn-primary col-sm-6">Update location</button>
+    <button id="update-address-button" class="btn btn-primary col-sm-6">Enter address</button>
+
+    <div id="address-container" class="loading-container">
+      <%= form_tag '/address', remote: true, id: "update-address-form", class: "collapse" do %>
+        <div class="form-group">
+          <%= text_area_tag "address", "", class: "form-control" %>
+        </div>
+        <%= submit_tag "Save", id: "submit-address-button", class: "btn btn-primary" %>
+        <%= button_tag "Cancel", id: "cancel-address-button", class: "btn btn-danger" %>
+      <% end %>
+    </div>
   </div>
+
+  <br /><br />
 
   <h4>Display message: <button id="edit-message-button" class="btn btn-xs btn-info">Edit</button></h4>
   <div id="message-container" class="loading-container">
